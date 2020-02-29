@@ -12,18 +12,28 @@ use KnotLib\Kernel\Module\ComponentTypes;
 use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
 use KnotLib\Kernel\Exception\ModuleInstallationException;
-use KnotLib\Kernel\Module\AbstractModule;
+use KnotLib\Kernel\Module\ModuleInterface;
 
 use KnotPhp\Module\KnotCache\Adapter\KnotCacheAdapter;
 
-class KnotFileCacheModule extends AbstractModule
+class KnotFileCacheModule implements ModuleInterface
 {
+    /**
+     * Declare dependency on another modules
+     *
+     * @return array
+     */
+    public static function requiredModules() : array
+    {
+        return [];
+    }
+
     /**
      * Declare dependent on components
      *
      * @return array
      */
-    public static function requiredComponents() : array
+    public static function requiredComponentTypes() : array
     {
         return [
             ComponentTypes::EVENTSTREAM,
