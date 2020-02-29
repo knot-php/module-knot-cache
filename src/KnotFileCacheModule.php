@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnused */
 declare(strict_types=1);
 
 namespace KnotPhp\Module\KnotCache;
@@ -8,15 +8,15 @@ use Throwable;
 use KnotLib\Cache\ArrayCache;
 use KnotLib\Cache\Config\FileCacheConfig;
 use KnotLib\Kernel\Kernel\ApplicationInterface;
-use KnotLib\Kernel\Module\Components;
+use KnotLib\Kernel\Module\ComponentTypes;
 use KnotLib\Kernel\EventStream\Channels;
 use KnotLib\Kernel\EventStream\Events;
 use KnotLib\Kernel\Exception\ModuleInstallationException;
-use KnotLib\Kernel\Module\ComponentModule;
+use KnotLib\Kernel\Module\AbstractModule;
 
 use KnotPhp\Module\KnotCache\Adapter\KnotCacheAdapter;
 
-class KnotFileCacheModule extends ComponentModule
+class KnotFileCacheModule extends AbstractModule
 {
     /**
      * Declare dependent on components
@@ -26,7 +26,7 @@ class KnotFileCacheModule extends ComponentModule
     public static function requiredComponents() : array
     {
         return [
-            Components::EVENTSTREAM,
+            ComponentTypes::EVENTSTREAM,
         ];
     }
 
@@ -37,7 +37,7 @@ class KnotFileCacheModule extends ComponentModule
      */
     public static function declareComponentType() : string
     {
-        return Components::CACHE;
+        return ComponentTypes::CACHE;
     }
 
     /**
