@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotPhp\Module\KnotCache\Adapter;
+namespace knotphp\module\knotcache\adapter;
 
-use KnotLib\Cache\CacheInterface as KnotCacheInterface;
-use KnotLib\Kernel\Cache\CacheInterface;
+use knotlib\cache\CacheInterface as KnotCacheInterface;
+use knotlib\kernel\cache\CacheInterface;
 
 class KnotCacheAdapter implements CacheInterface
 {

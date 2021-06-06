@@ -1,21 +1,21 @@
 <?php
 declare(strict_types=1);
 
-namespace KnotPhp\Module\KnotCache;
+namespace knotphp\module\knotcache;
 
 use Throwable;
 
-use KnotLib\Cache\FileCache;
-use KnotLib\Cache\Config\FileCacheConfig;
-use KnotLib\Kernel\Kernel\ApplicationInterface;
-use KnotLib\Kernel\Module\ComponentTypes;
-use KnotLib\Kernel\EventStream\Channels;
-use KnotLib\Kernel\EventStream\Events;
-use KnotLib\Kernel\Exception\ModuleInstallationException;
-use KnotLib\Kernel\Module\ModuleInterface;
-use KnotLib\Kernel\FileSystem\Dir;
+use knotlib\cache\FileCache;
+use knotlib\cache\config\FileCacheConfig;
+use knotlib\kernel\kernel\ApplicationInterface;
+use knotlib\kernel\module\ComponentTypes;
+use knotlib\kernel\eventstream\Channels;
+use knotlib\kernel\eventstream\Events;
+use knotlib\kernel\exception\ModuleInstallationException;
+use knotlib\kernel\module\ModuleInterface;
+use knotlib\kernel\FileSystem\Dir;
 
-use KnotPhp\Module\KnotCache\Adapter\KnotCacheAdapter;
+use KnotPhp\Module\KnotCache\adapter\KnotCacheAdapter;
 
 class KnotArrayCacheModule implements ModuleInterface
 {
